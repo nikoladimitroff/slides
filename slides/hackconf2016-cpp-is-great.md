@@ -366,19 +366,13 @@ http://pastebin.com/8JLwmbFA
 ```cpp
 class Chair
 {
-public:
     Model3D ChairModel; // <--- Трябва само за рисуването
     Vector3 Position;
     int ComfortLevel = 0; // <--- Трябва само за изкуствения интелект
     PhysicsModel PhModel; // <--- Трябва само за физичната симулация
 };
-
-class ArmChair : public Chair
-{
-public:
-    ComfortLevel = 10;
-    ...
-};
+class ArmChair : public Chair;
+class SwivelChair : public Chair;
 ...
 std::vector<Chair> chairs;
 Draw(chairs);
@@ -400,7 +394,6 @@ class ChairForAI
     int ComfortLevel;
 };
 ...
-
 ```
 
 --- VERTICAL SLIDE ---
@@ -411,16 +404,15 @@ class PhysicsObject
     unsigned int Id;
     PhysicsModel Representation;
 };
-...
-std::vector<PhysicsObject> objectsWorthSimulating;
-SimulatePhysics(objectsWorthSimulating);
-
 class ComfortableItem
 {
     unsigned int Id;
     int ComfortLevel;
 };
 ...
+std::vector<PhysicsObject> objectsWorthSimulating;
+SimulatePhysics(objectsWorthSimulating);
+
 std::vector<ComfortableItem> comfortableItems;
 ConsiderForAI(comfortableItems);
 ```
@@ -436,5 +428,4 @@ ConsiderForAI(comfortableItems);
 
 <!-- .element class="fragment" data-fragment-index="4" --> ![Cpp bf](/slides/resources/hackconf2016-cpp-is-great/scumbag-cpp.png)
 
-Note: т.е. C++ е онова гадже, което много обичате, въпреки че ви лази по нервите и
-което евентуално зарязвате, заради новия човек, заради чисто новата му Виртуала машина А7
+Note: т.е. C++ е онова гадже, което много обичате, въпреки че ви лази по нервите.
