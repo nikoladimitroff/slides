@@ -101,9 +101,9 @@ JS + C++ = JS++
 
 --- NEXT SLIDE ---
 
-![Контрол](http://www.stefanoff.org/kontrol/wp-content/uploads/2014/12/poster.jpg)
+![Контрол](/slides/resources/hackconf2016-cpp-is-great/control.jpg)
 
-Notes: Какво е общото между тези езици? За какво ни е контрол?
+Note: Какво е общото между тези езици? За какво ни е контрол?
 
 --- NEXT SLIDE ---
 
@@ -201,9 +201,8 @@ int& z = x;
 
 ```js
 function mySqrt(num) {
-    if (num < 0) {
+    if (num < 0)
         throw new Error("Argument can't be negative!");
-    }
     return Math.sqrt(num);
 }
 function doSomeMath() {
@@ -222,9 +221,7 @@ http://www.joelonsoftware.com/items/2003/10/13.html
 bool MySqrt(double num, double& result)
 {
     if (num < 0)
-    {
         return false;
-    }
     result = std::sqrt(num);
     return true;
 }
@@ -233,9 +230,8 @@ void DoSomeMath()
 {
     int& result;
     bool didSucceed = MySqrt(-5, result);
-    if (!didSucceed) {
+    if (!didSucceed)
         std::cout << "Sqrt failed: " << std::endl;
-    }
 }
 ```
 
@@ -339,7 +335,8 @@ int main() {
 
 void Foo()
 {
-    LOG_MESSAGE("Hey there!"); // Line 15 in file Test.cpp says 'Hey there!'
+    // Line 15 in file Test.cpp says 'Hey there!'
+    LOG_MESSAGE("Hey there!");
 }
 ```
 --- VERTICAL SLIDE ---
