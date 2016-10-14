@@ -6,13 +6,17 @@ Nikola Dimitroff
 <a href="https://github.com/nikoladimitroff"><i class="fa fa-github"></i></a>
 <a href="https://dimitroff.bg"><i class="fa fa-rss"></i></a>
 
+Coherent Labs
+<a href="https://coherent-labs.com"><i class="fa fa-rss"></i></a>
+
+
 --- NEXT SLIDE ---
 
-МНОГО ЛОГОТА ТУК
+![Logos](/slides/resources/hackconf2016-cpp-is-great/coh-logos.png)
 
 --- NEXT SLIDE ---
 
-![C++ as monster]()
+![C++ as monster](/slides/resources/hackconf2016-cpp-is-great/cppthulhu.jpg)
 
 --- NEXT SLIDE ---
 
@@ -49,13 +53,15 @@ int main()
 }
 ```
 
-results in 15786 bytes of error messages
+160 байта код =
+15786 байта грешка
 
 > /usr/include/c++/4.6/bits/stl_algo.h:162:4: error: no match for ‘operator==’ in
 > ‘__first.__gnu_cxx::__normal_iterator::operator*
 > [with _Iterator = std::vector*, _Container = std::vector >, __gnu_cxx::__normal_iterator::reference = std::vector&]() == __val’
+> ...
 
-Note: задето сте изтървали точка и запетая
+Note:
 Дори съществува състезание за най-дълга грешка от най-малко написан код!
 Source for the code - http://codegolf.stackexchange.com/questions/1956/generate-the-longest-error-message-in-c
 
@@ -63,7 +69,7 @@ Source for the code - http://codegolf.stackexchange.com/questions/1956/generate-
 
 ![wtf](https://img.memecdn.com/confused-black-girl---confusception_gp_3489431.jpg)
 
-Check http://tgceec.tumblr.com/ for more
+И още - http://tgceec.tumblr.com/
 
 --- VERTICAL SLIDE ---
 
@@ -97,23 +103,13 @@ JS + C++ = JS++
 
 ![Контрол](http://www.stefanoff.org/kontrol/wp-content/uploads/2014/12/poster.jpg)
 
-Notes: Какво е общото между тези езици?
-
---- NEXT SLIDE ---
-
-За какво няма да си говорим?
-
-
-# <!-- .element class="fragment" data-fragment-index="0" --> C++ е най-якия език на света!!!!11!!1
-
-Note: Няма да ви кажа, че C++ е най-якия език на света
+Notes: Какво е общото между тези езици? За какво ни е контрол?
 
 --- NEXT SLIDE ---
 
 * *Истинска* платформена независимост
-    - <!-- .element class="fragment" data-fragment-index="0" --> Пуснете си Java-та на PS4 плс
-
-https://github.com/facebook/react-native/issues/2033
+    - <!-- .element class="fragment" data-fragment-index="0" --> Пуснете си Java-та на Xbox One плс
+    - <!-- .element class="fragment" data-fragment-index="1" --> https://github.com/facebook/react-native/issues/2033
 
 --- VERTICAL SLIDE ---
 
@@ -123,43 +119,35 @@ https://github.com/facebook/react-native/issues/2033
     - <!-- .element class="fragment" data-fragment-index="2" --> системи в реално време? (SpaceX, Hololens, IPhone)
     - <!-- .element class="fragment" data-fragment-index="3" --> колко пъти си заредихте батерията на телефона?
 
-Note: Няма да ви кажа, че C/C++ е напълно задължителен за бързодействие.
-Удобството компютрите да стават по-бързи изчезва
-и това го знаем нали? Да, да, чували сме ги тия, че ранната оптимизация
-е корена на всичко зло, но ранната песимизация е корена на "ама това
-защо тръгва само на моята машина". Винаги има смисъл да гоните бързодействие
+Note: Винаги има смисъл да гоните бързодействие
 дотолкова, колкото клиента усеща.
 
 Пък ако съвсем не искате да пестите ресурс на клиента,
 можете да оптимизирате програмта и да копаете bitcoins през спестеното време.
 
---- VERTICAL SLIDE ---
-
-![Mortal strike](http://66.media.tumblr.com/2b1e130bc1fa6874c5faf60a25d82688/tumblr_inline_n6mi5fEK3T1raovxb.jpg)
-
-Note: Усещам, че у вас напира желанието да ме поправите - ама то има Unity3D за игри,
-ама то невронни мрежи на JS. Ама то Java става по-бърза с времето от C++.
-Истината е, че контролът, който получавате не може да бъде заменен поне на текущия етап
-от оптимизатор. Ако беше възможно, хората щяха да са открили как става. И все пак
-никоя голяма компания не е махнала езиците от ниско ниво.
-
 --- NEXT SLIDE ---
 
 Та какъв е смисъла?
 
+<!-- .element class="fragment" data-fragment-index="0" --> ![Hermione](/slides/resources/hackconf2016-cpp-is-great/hermione.gif)
+
+Note: Няма да ви кажа, че C++ е най-якия език на света
+
+--- NEXT SLIDE ---
+
+Закон за изтичащата абстракция
 
 --- VERTICAL SLIDE ---
 
-![harry potter]()
-Не го слушайте!
-## C++ е най-якия език за програмиране
+![Joel Spolsky](/slides/resources/hackconf2016-cpp-is-great/joel-spolsky.jpg)
+
+http://joelonsoftware.com
+
+--- VERTICAL SLIDE ---
+
+![Filters](/slides/resources/hackconf2016-cpp-is-great/filters.png)
 
 --- NEXT SLIDE ---
-
-Закона за изтичащата абстракция
-
---- NEXT SLIDE ---
-
 
 <subscript>* Внимание, не се препоръчва за хора със слаби сърца</subscript>
 
@@ -169,6 +157,7 @@ Note: Усещам, че у вас напира желанието да ме п�
 ```cpp
 int x = 5;
 ```
+
 Присвояване по стойност
 ```cpp
 int y = x;
@@ -180,20 +169,53 @@ int y = x;
 int& z = x;
 ```
 
-Указатели
-
-```cpp
-int* w = &x;
-printf("%d", *w + x) // 10
-```
-
 --- NEXT SLIDE ---
 
 ## Изключения
 
 --- VERTICAL SLIDE ---
 
-Python Vs. C++
+![Filters](/slides/resources/hackconf2016-cpp-is-great/exception-map.png)
+
+--- VERTICAL SLIDE ---
+
+```js
+function mySqrt(num) {
+    if (num < 0) {
+        throw new Error("Argument can't be negative!");
+    }
+    return Math.sqrt(num);
+}
+function doSomeMath() {
+    var num = parseInt(prompt("Please enter a number"));
+    mySqrt(num); // Къде отива кода ако входа е -5?
+}
+```
+
+http://www.joelonsoftware.com/items/2003/10/13.html
+
+--- VERTICAL SLIDE ---
+
+```cpp
+bool MySqrt(double num, double& result)
+{
+    if (num < 0)
+    {
+        return false;
+    }
+    result = std::sqrt(num);
+    return true;
+}
+
+void DoSomeMath()
+{
+    int& result;
+    bool didSucceed = MySqrt(-5, result);
+    if (!didSucceed) {
+        std::cout << "Sqrt failed: " << std::endl;
+    }
+}
+```
 
 --- NEXT SLIDE ---
 
@@ -240,6 +262,8 @@ const rectangle = new Rectangle(10, 20);
 console.log(rectangle.getArea());
 ```
 
+<!-- .element class="fragment" data-fragment-index="0" --> Къде? Навсякъде!
+
 --- NEXT SLIDE ---
 
 Изчисления по време на компилация
@@ -252,7 +276,7 @@ constexpr int ComputeFibonacci(int n)
     return n <= 1 ? 1 : ComputeFibonacci(n - 1) + ComputeFibonacci(n - 2);
 }
 int main() {
-    constexpr int tenthFib = ComputeFibonacci(50);
+    constexpr int tenthFib = ComputeFibonacci(10);
     printf("The tenth fib number is %d", tenthFib);
     return 0;
 }
@@ -265,20 +289,54 @@ int main() {
 
 --- VERTICAL SLIDE ---
 
-Декоратори DIY
-
 // todo
 ```cpp
-#define Bindable(f) \
-    BindingsManager.BindFunc(f, );
+#define LOG_MESSAGE(Message) \
+    printf("Line %d in file %s says %s", __LINE__, __FILE__, Message)
 
-BINDABLE()
-void
+void Foo()
+{
+    LOG_MESSAGE("Hey there!");
+}
 ```
+--- VERTICAL SLIDE ---
 
-
+```cpp
+UFUNCTION(BlueprintCallable)
+void Foo();
+```
 --- NEXT SLIDE ---
 
 Data-oriented programming
 
-// todo
+--- VERTICAL SLIDE ---
+
+* ~~Абстракция~~
+* ~~Енкапсулация~~
+* ~~Наследяване~~
+* <!-- .element class="fragment" data-fragment-index="0" --> Данноважност
+
+--- VERTICAL SLIDE ---
+
+* Код < данни
+* Модел в кода != модел на света
+
+--- VERTICAL SLIDE ---
+
+Пример
+
+СТОЛОВЕЕЕ
+
+--- NEXT SLIDE ---
+
+## Да обобщим
+
+* <!-- .element class="fragment" data-fragment-index="0" --> C++ е императивно-функционален
+* <!-- .element class="fragment" data-fragment-index="1" --> C++ е обектно-аспектно ориентиран към данни
+* <!-- .element class="fragment" data-fragment-index="2" --> C++ може да се самопроменя
+* <!-- .element class="fragment" data-fragment-index="3" --> C++ ви бърка в мозъка
+
+<!-- .element class="fragment" data-fragment-index="4" --> ![Cpp bf](/slides/resources/hackconf2016-cpp-is-great/scumbag-cpp.png)
+
+Note: т.е. C++ е онова гадже, което много обичате, въпреки че ви лази по нервите и
+което евентуално зарязвате, заради новия човек, заради чисто новата му Виртуала машина А7
