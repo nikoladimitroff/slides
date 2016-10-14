@@ -1,13 +1,13 @@
 ## Как програмирането на ниско ниво ни прави по-добри програмисти на високо
 
 ---------------------
-Nikola Dimitroff
-<a href="mailto:nikola@dimitroff.bg"><i class="fa fa-envelope-o"></i></a>
-<a href="https://github.com/nikoladimitroff"><i class="fa fa-github"></i></a>
-<a href="https://dimitroff.bg"><i class="fa fa-rss"></i></a>
+Никола Димитров
 
-Coherent Labs
-<a href="https://coherent-labs.com"><i class="fa fa-rss"></i></a>
+<a href="mailto:nikola@dimitroff.bg"><i class="fa fa-envelope-o"></i>nikola@dimitroff.bg</a> </br>
+<a href="https://github.com/nikoladimitroff"><i class="fa fa-github"></i>/nikoladimitroff</a> </br>
+
+
+<a href="https://dimitroff.bg"><i class="fa fa-rss"></i> dimitroff.bg</a> / <a href="https://coherent-labs.com"> coherent-labs.com</a>
 
 
 --- NEXT SLIDE ---
@@ -196,6 +196,8 @@ http://www.joelonsoftware.com/items/2003/10/13.html
 
 --- VERTICAL SLIDE ---
 
+### Кодове за грешки
+
 ```cpp
 bool MySqrt(double num, double& result)
 {
@@ -217,9 +219,30 @@ void DoSomeMath()
 }
 ```
 
+--- VERTICAL SLIDE ---
+
+### Скриване на грешки
+
+```cpp
+void ShootEnemy(Player* player, Enemy* enemy)
+{
+    if (enemy == nullptr)
+    {
+        std::cout << "Can't shoot a nonexisting enemy" << std::endl;
+        return;
+    }
+    ...
+}
+void OnMouseDown()
+{
+    Shoot(player, badGuy);
+}
+```
+
+
 --- NEXT SLIDE ---
 
-const correctness
+#### const correctness
 * Изкуството да не се променяш
 
 --- VERTICAL SLIDE ---
@@ -266,7 +289,7 @@ console.log(rectangle.getArea());
 
 --- NEXT SLIDE ---
 
-Изчисления по време на компилация
+### Изчисления по време на компилация
 
 --- VERTICAL SLIDE ---
 
@@ -284,7 +307,7 @@ int main() {
 
 --- NEXT SLIDE ---
 
-Генериране на код - макроси и шаблони (сравнение с Generics в C# / Java?)
+### Генериране на код
 * И изкуството да променяш средата
 
 --- VERTICAL SLIDE ---
@@ -292,11 +315,11 @@ int main() {
 // todo
 ```cpp
 #define LOG_MESSAGE(Message) \
-    printf("Line %d in file %s says %s", __LINE__, __FILE__, Message)
+    printf("Line %d in file %s says '%s'", __LINE__, __FILE__, Message)
 
 void Foo()
 {
-    LOG_MESSAGE("Hey there!");
+    LOG_MESSAGE("Hey there!"); // Line 15 in file Test.cpp says 'Hey there!'
 }
 ```
 --- VERTICAL SLIDE ---
@@ -305,9 +328,26 @@ void Foo()
 UFUNCTION(BlueprintCallable)
 void Foo();
 ```
+
+--- VERTICAL SLIDE ---
+
+```cpp
+int main() {
+    std::vector<int> myList = { 1, 2, 3 };
+    auto transformed = PythonRange(x * x forevery x inside myList);
+
+    for (const auto& x : transformed)
+    {
+        std::cout << x << std::endl;
+    } // 1, 4, 9
+}
+```
+
+http://pastebin.com/8JLwmbFA
+
 --- NEXT SLIDE ---
 
-Data-oriented programming
+### Data-oriented programming
 
 --- VERTICAL SLIDE ---
 
@@ -323,9 +363,67 @@ Data-oriented programming
 
 --- VERTICAL SLIDE ---
 
-Пример
+```cpp
+class Chair
+{
+public:
+    Model3D ChairModel; // <--- Трябва само за рисуването
+    Vector3 Position;
+    int ComfortLevel = 0; // <--- Трябва само за изкуствения интелект
+    PhysicsModel PhModel; // <--- Трябва само за физичната симулация
+};
 
-СТОЛОВЕЕЕ
+class ArmChair : public Chair
+{
+public:
+    ComfortLevel = 10;
+    ...
+};
+...
+std::vector<Chair> chairs;
+Draw(chairs);
+SimulatePhysics(chairs);
+ConsiderChairsForAI(chairs);
+```
+
+--- VERTICAL SLIDE ---
+
+```cpp
+class ChairForPhysics
+{
+    unsigned int Id;
+    PhysicsModel PhModel;
+};
+class ChairForAI
+{
+    unsigned int Id;
+    int ComfortLevel;
+};
+...
+
+```
+
+--- VERTICAL SLIDE ---
+
+```cpp
+class PhysicsObject
+{
+    unsigned int Id;
+    PhysicsModel Representation;
+};
+...
+std::vector<PhysicsObject> objectsWorthSimulating;
+SimulatePhysics(objectsWorthSimulating);
+
+class ComfortableItem
+{
+    unsigned int Id;
+    int ComfortLevel;
+};
+...
+std::vector<ComfortableItem> comfortableItems;
+ConsiderForAI(comfortableItems);
+```
 
 --- NEXT SLIDE ---
 
