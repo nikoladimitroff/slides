@@ -147,6 +147,26 @@ http://joelonsoftware.com
 
 ![Filters](/slides/resources/hackconf2016-cpp-is-great/filters.png)
 
+--- VERTICAL SLIDE ---
+
+```js
+function appendOneAtATime(count) {
+    for (let i = 0; i < count; i++) {
+        document.body.innerHTML += '<div></div>';
+    }
+}
+function appendAll(count) {
+    let fragment = document.createDocumentFragment();
+    for (let i = 0; i < count; i++) {
+        let el = document.createElement('div');
+        fragment.appendChild(el);
+    }
+    document.body.appendChild(fragment);
+}
+```
+
+http://pastebin.com/ahRT0DgS
+
 --- NEXT SLIDE ---
 
 <subscript>* Внимание, не се препоръчва за хора със слаби сърца</subscript>
