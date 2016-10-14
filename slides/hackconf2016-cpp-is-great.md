@@ -29,11 +29,11 @@
 
 ```cpp
 // C++
-std::array<int, 3> input = {1, 2, 3};
-std::array<int, 3> output;
-std::transform(input.begin(), input.end(),
-            output.begin(), output.end(),
-            [](int x) { return x * x; });
+vector<int, 3> input = {1, 2, 3};
+vector<int, 3> output;
+transform(input.begin(), input.end(),
+          output.begin(), output.end(),
+          [](int x) { return x * x; });
 ```
 
 Note: Налага ми се да пиша на C++, което в някои аспекти си е страшно.
@@ -48,8 +48,8 @@ Note: Налага ми се да пиша на C++, което в някои а
 int main()
 {
     int a;
-    std::vector<std::vector<int>> v;
-    auto it = std::find(v.begin(), v.end(), a /* <-- */);
+    vector<vector<int>> v;
+    auto it = find(v.begin(), v.end(), a /* <-- */);
 }
 ```
 
@@ -221,7 +221,7 @@ bool MySqrt(double num, double& result)
 {
     if (num < 0)
         return false;
-    result = std::sqrt(num);
+    result = sqrt(num);
     return true;
 }
 
@@ -230,7 +230,7 @@ void DoSomeMath()
     int& result;
     bool didSucceed = MySqrt(-5, result);
     if (!didSucceed)
-        std::cout << "Sqrt failed: " << std::endl;
+        cout << "Sqrt failed: " << endl;
 }
 ```
 
@@ -243,7 +243,7 @@ void ShootEnemy(Player* player, Enemy* enemy)
 {
     if (enemy == nullptr)
     {
-        std::cout << "Can't shoot a nonexisting enemy" << std::endl;
+        cout << "Can't shoot a nonexisting enemy" << endl;
         return;
     }
     ...
@@ -263,13 +263,13 @@ void OnMouseDown()
 
 ```cpp
 // Ще преизползва file
-bool EndsWith(std::string& str, std::string& suffix);
+bool EndsWith(string& str, string& suffix);
 // Ще преизползва file и сме сигурни, че няма да го промени
-bool EndsWith(const std::string& str, const std::string& suffix);
+bool EndsWith(const string& str, const string& suffix);
 int main()
 {
     ...
-    std::string file = "nikola-as-snape.png";
+    string file = "nikola-as-snape.png";
     printf("Is this file a png? %d", EndsWith(file, ".png"));
 }
 ```
@@ -325,12 +325,12 @@ print([x * x for x in (1, 2, 3)])
 
 ```cpp
 int main() {
-    std::vector<int> myList = { 1, 2, 3 };
+    vector<int> myList = { 1, 2, 3 };
     auto transformed = PythonRange(x * x forevery x inside myList);
 
     for (const auto& x : transformed)
     {
-        std::cout << x << std::endl;
+        cout << x << endl;
     } // 1, 4, 9
 }
 ```
@@ -366,7 +366,7 @@ class Chair
 class ArmChair : public Chair;
 class SwivelChair : public Chair;
 ...
-std::vector<Chair> chairs;
+vector<Chair> chairs;
 Draw(chairs);
 SimulatePhysics(chairs);
 ConsiderChairsForAI(chairs);
@@ -402,10 +402,10 @@ class ComfortableItem
     int ComfortLevel;
 };
 ...
-std::vector<PhysicsObject> objectsWorthSimulating;
+vector<PhysicsObject> objectsWorthSimulating;
 SimulatePhysics(objectsWorthSimulating);
 
-std::vector<ComfortableItem> comfortableItems;
+vector<ComfortableItem> comfortableItems;
 ConsiderForAI(comfortableItems);
 ```
 
