@@ -113,8 +113,7 @@ Note: Какво е общото между тези езици? За какво
 
 --- VERTICAL SLIDE ---
 
-* Когато *бързодействието* е наистина важно
-    - <!-- .element class="fragment" data-fragment-index="0" --> асимптотичната сложност не стига
+* Когато *бързодействието* е важно
     - <!-- .element class="fragment" data-fragment-index="1" --> математика? (графика, ИИ, игри)
     - <!-- .element class="fragment" data-fragment-index="2" --> системи в реално време? (SpaceX, Hololens, IPhone)
     - <!-- .element class="fragment" data-fragment-index="3" --> колко пъти си заредихте батерията на телефона?
@@ -255,7 +254,6 @@ void OnMouseDown()
 }
 ```
 
-
 --- NEXT SLIDE ---
 
 #### const correctness
@@ -264,8 +262,6 @@ void OnMouseDown()
 --- VERTICAL SLIDE ---
 
 ```cpp
-// Ще копира file в str
-bool EndsWith(std::string str, std::string suffix);
 // Ще преизползва file
 bool EndsWith(std::string& str, std::string& suffix);
 // Ще преизползва file и сме сигурни, че няма да го промени
@@ -305,24 +301,6 @@ console.log(rectangle.getArea());
 
 --- NEXT SLIDE ---
 
-### Изчисления по време на компилация
-
---- VERTICAL SLIDE ---
-
-```
-constexpr int ComputeFibonacci(int n)
-{
-    return n <= 1 ? 1 : ComputeFibonacci(n - 1) + ComputeFibonacci(n - 2);
-}
-int main() {
-    constexpr int tenthFib = ComputeFibonacci(10);
-    printf("The tenth fib number is %d", tenthFib);
-    return 0;
-}
-```
-
---- NEXT SLIDE ---
-
 ### Генериране на код
 * И изкуството да променяш средата
 
@@ -341,12 +319,9 @@ void Foo()
 ```
 --- VERTICAL SLIDE ---
 
-```cpp
-UFUNCTION(BlueprintCallable)
-void Foo();
+```py
+print([x * x for x in (1, 2, 3)])
 ```
-
---- VERTICAL SLIDE ---
 
 ```cpp
 int main() {
