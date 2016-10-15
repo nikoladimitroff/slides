@@ -144,10 +144,6 @@ http://joelonsoftware.com
 
 --- VERTICAL SLIDE ---
 
-![Filters](slides/resources/hackconf2016-cpp-is-great/filters.png)
-
---- VERTICAL SLIDE ---
-
 ```js
 function appendOneAtATime(count) {
     for (let i = 0; i < count; i++) {
@@ -380,7 +376,7 @@ class ChairForAI
 ...
 ```
 
-NoteL: Новият въпрос - какво ни интересува, че нещото е стол?
+Note: Новият въпрос - какво ни интересува, че нещото е стол?
 
 --- VERTICAL SLIDE ---
 
@@ -415,3 +411,9 @@ ConsiderForAI(comfortableItems);
 <!-- .element class="fragment" data-fragment-index="4" --> ![Cpp bf](slides/resources/hackconf2016-cpp-is-great/scumbag-cpp.png)
 
 Note: т.е. C++ е онова гадже, което много обичате, въпреки че ви лази по нервите.
+
+--- NEXT SLIDE ---
+
+Slides @
+
+https://nikoladimitroff.github.io/slides
