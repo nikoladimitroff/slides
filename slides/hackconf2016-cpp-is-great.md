@@ -12,15 +12,15 @@
 
 --- NEXT SLIDE ---
 
-![Logos](/slides/resources/hackconf2016-cpp-is-great/coh-logos.png)
+![Logos](slides/resources/hackconf2016-cpp-is-great/coh-logos.png)
 
 --- NEXT SLIDE ---
 
-![C++ as monster](/slides/resources/hackconf2016-cpp-is-great/cppthulhu.jpg)
+![C++ as monster](slides/resources/hackconf2016-cpp-is-great/cppthulhu.jpg)
 
 --- NEXT SLIDE ---
 
-![The C++ scrolls](/slides/resources/hackconf2016-cpp-is-great/cpp-scrolls.png)
+![The C++ scrolls](slides/resources/hackconf2016-cpp-is-great/cpp-scrolls.png)
 
 ```cpp
 // ES6
@@ -73,7 +73,7 @@ Source for the code - http://codegolf.stackexchange.com/questions/1956/generate-
 
 --- VERTICAL SLIDE ---
 
-![Defence against the dark arts](/slides/resources/hackconf2016-cpp-is-great/nikola-as-snape.png)
+![Defence against the dark arts](slides/resources/hackconf2016-cpp-is-great/nikola-as-snape.png)
 
 Note: Но спокойно, аз ще ви предпазя от всичката гадория. Даже бихте
 могли да ме наречете вашия учител по защита от тъмните изкуства
@@ -101,7 +101,7 @@ JS + C++ = JS++
 
 --- NEXT SLIDE ---
 
-![Контрол](/slides/resources/hackconf2016-cpp-is-great/control.jpg)
+![Контрол](slides/resources/hackconf2016-cpp-is-great/control.jpg)
 
 Note: Какво е общото между тези езици? За какво ни е контрол?
 
@@ -128,7 +128,7 @@ Note: Винаги има смисъл да гоните бързодейств�
 
 Та какъв е смисъла?
 
-<!-- .element class="fragment" data-fragment-index="0" --> ![Hermione](/slides/resources/hackconf2016-cpp-is-great/hermione.gif)
+<!-- .element class="fragment" data-fragment-index="0" --> ![Hermione](slides/resources/hackconf2016-cpp-is-great/hermione.gif)
 
 Note: Няма да ви кажа, че C++ е най-якия език на света
 
@@ -138,13 +138,13 @@ Note: Няма да ви кажа, че C++ е най-якия език на с�
 
 --- VERTICAL SLIDE ---
 
-![Joel Spolsky](/slides/resources/hackconf2016-cpp-is-great/joel-spolsky.jpg)
+![Joel Spolsky](slides/resources/hackconf2016-cpp-is-great/joel-spolsky.jpg)
 
 http://joelonsoftware.com
 
 --- VERTICAL SLIDE ---
 
-![Filters](/slides/resources/hackconf2016-cpp-is-great/filters.png)
+![Filters](slides/resources/hackconf2016-cpp-is-great/filters.png)
 
 --- VERTICAL SLIDE ---
 
@@ -194,7 +194,7 @@ int& z = x;
 
 --- VERTICAL SLIDE ---
 
-![Filters](/slides/resources/hackconf2016-cpp-is-great/exception-map.png)
+![Filters](slides/resources/hackconf2016-cpp-is-great/exception-map.png)
 
 --- VERTICAL SLIDE ---
 
@@ -420,6 +420,6 @@ ConsiderForAI(comfortableItems);
 * <!-- .element class="fragment" data-fragment-index="2" --> C++ е (не)променяем.
 * <!-- .element class="fragment" data-fragment-index="3" --> C++ ви бърка в мозъка
 
-<!-- .element class="fragment" data-fragment-index="4" --> ![Cpp bf](/slides/resources/hackconf2016-cpp-is-great/scumbag-cpp.png)
+<!-- .element class="fragment" data-fragment-index="4" --> ![Cpp bf](slides/resources/hackconf2016-cpp-is-great/scumbag-cpp.png)
 
 Note: т.е. C++ е онова гадже, което много обичате, въпреки че ви лази по нервите.
