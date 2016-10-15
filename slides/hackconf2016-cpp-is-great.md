@@ -54,7 +54,7 @@ int main()
 ```
 
 160 байта код =
-15786 байта грешка
+15 786 байта грешка
 
 > /usr/include/c++/4.6/bits/stl_algo.h:162:4: error: no match for ‘operator==’ in
 > ‘__first.__gnu_cxx::__normal_iterator::operator*
@@ -227,7 +227,7 @@ bool MySqrt(double num, double& result)
 
 void DoSomeMath()
 {
-    int& result;
+    double result = 0;
     bool didSucceed = MySqrt(-5, result);
     if (!didSucceed)
         cout << "Sqrt failed: " << endl;
@@ -279,12 +279,15 @@ int main()
 ```cpp
 class Rectangle
 {
-    public:
-        // Тази функция няма да промени вътрешното състояние на обекта
-        int GetArea() const
-        {
-            return Width * Height;
-        }
+private:
+    int Width;
+    int Height;
+public:
+    // Тази функция няма да промени вътрешното състояние на правоъгълника
+    int GetArea() const
+    {
+        return Width * Height;
+    }
 };
 ```
 
@@ -304,19 +307,6 @@ console.log(rectangle.getArea());
 ### Генериране на код
 * И изкуството да променяш средата
 
---- VERTICAL SLIDE ---
-
-// todo
-```cpp
-#define LOG_MESSAGE(Message) \
-    printf("Line %d in file %s says '%s'", __LINE__, __FILE__, Message)
-
-void Foo()
-{
-    // Line 15 in file Test.cpp says 'Hey there!'
-    LOG_MESSAGE("Hey there!");
-}
-```
 --- VERTICAL SLIDE ---
 
 ```py
@@ -379,28 +369,30 @@ ConsiderChairsForAI(chairs);
 ```cpp
 class ChairForPhysics
 {
-    unsigned int Id;
+    int Id;
     PhysicsModel PhModel;
 };
 class ChairForAI
 {
-    unsigned int Id;
+    int Id;
     int ComfortLevel;
 };
 ...
 ```
+
+NoteL: Новият въпрос - какво ни интересува, че нещото е стол?
 
 --- VERTICAL SLIDE ---
 
 ```cpp
 class PhysicsObject
 {
-    unsigned int Id;
+    int Id;
     PhysicsModel Representation;
 };
 class ComfortableItem
 {
-    unsigned int Id;
+    int Id;
     int ComfortLevel;
 };
 ...
@@ -416,7 +408,7 @@ ConsiderForAI(comfortableItems);
 ## Да обобщим
 
 * <!-- .element class="fragment" data-fragment-index="0" --> C++ е императивно-функционален
-* <!-- .element class="fragment" data-fragment-index="1" --> C++ е обектно-аспектно ориентиран към данни
+* <!-- .element class="fragment" data-fragment-index="1" --> C++ е обектно ориентиран към данни
 * <!-- .element class="fragment" data-fragment-index="2" --> C++ е (не)променяем.
 * <!-- .element class="fragment" data-fragment-index="3" --> C++ ви бърка в мозъка
 
