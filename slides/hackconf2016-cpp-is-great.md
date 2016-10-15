@@ -320,8 +320,10 @@ void Foo()
 --- VERTICAL SLIDE ---
 
 ```py
-print([x * x for x in (1, 2, 3)])
+[x * x for x in (1, 2, 3)] // 1, 4, 9
 ```
+
+Vs.
 
 ```cpp
 int main() {
@@ -415,7 +417,7 @@ ConsiderForAI(comfortableItems);
 
 * <!-- .element class="fragment" data-fragment-index="0" --> C++ е императивно-функционален
 * <!-- .element class="fragment" data-fragment-index="1" --> C++ е обектно-аспектно ориентиран към данни
-* <!-- .element class="fragment" data-fragment-index="2" --> C++ може да се самопроменя
+* <!-- .element class="fragment" data-fragment-index="2" --> C++ е (не)променяем.
 * <!-- .element class="fragment" data-fragment-index="3" --> C++ ви бърка в мозъка
 
 <!-- .element class="fragment" data-fragment-index="4" --> ![Cpp bf](/slides/resources/hackconf2016-cpp-is-great/scumbag-cpp.png)
