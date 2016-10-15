@@ -29,8 +29,8 @@
 
 ```cpp
 // C++
-vector<int, 3> input = {1, 2, 3};
-vector<int, 3> output;
+vector<int> input = {1, 2, 3};
+vector<int> output;
 transform(input.begin(), input.end(),
           output.begin(), output.end(),
           [](int x) { return x * x; });
@@ -90,20 +90,20 @@ JS + C++ = JS++
 
 --- VERTICAL SLIDE ---
 
-1. Машинен код
-2. Асемблер
-
-*** 2.5 C / C++ ***
-
-3. Java / C# / JS
-4. SQL
-5. Prolog
+<ol>
+<li>Машинен код</li>
+<li>Асемблер</li>
+<strong><em>2.5. C / C++</strong></em>
+<li>Java / C# / JS</li>
+<li>SQL</li>
+<li>Prolog</li>
+</ol>
 
 --- NEXT SLIDE ---
 
-![Контрол](slides/resources/hackconf2016-cpp-is-great/control.jpg)
+![Свобода](slides/resources/hackconf2016-cpp-is-great/freedom.jpg)
 
-Note: Какво е общото между тези езици? За какво ни е контрол?
+Note: Какво е общото между тези езици? За какво ни е свобода?
 
 --- NEXT SLIDE ---
 
@@ -113,7 +113,7 @@ Note: Какво е общото между тези езици? За какво
 
 --- VERTICAL SLIDE ---
 
-* Когато *бързодействието* е важно
+* *Бързодействие*
     - <!-- .element class="fragment" data-fragment-index="1" --> математика? (графика, ИИ, игри)
     - <!-- .element class="fragment" data-fragment-index="2" --> системи в реално време? (SpaceX, Hololens, IPhone)
     - <!-- .element class="fragment" data-fragment-index="3" --> колко пъти си заредихте батерията на телефона?
@@ -173,7 +173,7 @@ http://pastebin.com/ahRT0DgS
 int x = 5;
 ```
 
-Присвояване по стойност
+Присвояване по стойност (копие)
 ```cpp
 int y = x;
 ```
@@ -182,6 +182,16 @@ int y = x;
 
 ```cpp
 int& z = x;
+```
+
+--- VERTICAL SLIDE ---
+
+```js
+var x = 10;
+var y = x; // Копие
+
+var z = { prop: 10 };
+var w = z; // Псевдоним
 ```
 
 --- NEXT SLIDE ---
@@ -226,7 +236,7 @@ void DoSomeMath()
     double result = 0;
     bool didSucceed = MySqrt(-5, result);
     if (!didSucceed)
-        cout << "Sqrt failed: " << endl;
+        cout << "Sqrt failed! " << endl;
 }
 ```
 
@@ -264,7 +274,6 @@ bool EndsWith(string& str, string& suffix);
 bool EndsWith(const string& str, const string& suffix);
 int main()
 {
-    ...
     string file = "nikola-as-snape.png";
     printf("Is this file a png? %d", EndsWith(file, ".png"));
 }
@@ -286,17 +295,6 @@ public:
     }
 };
 ```
-
---- VERTICAL SLIDE ---
-
-Ако пишете на ES6, ползвайте const!
-
-```js
-const rectangle = new Rectangle(10, 20);
-console.log(rectangle.getArea());
-```
-
-<!-- .element class="fragment" data-fragment-index="0" --> Къде? Навсякъде!
 
 --- NEXT SLIDE ---
 
@@ -346,13 +344,13 @@ http://pastebin.com/8JLwmbFA
 ```cpp
 class Chair
 {
-    Model3D ChairModel; // <--- Трябва само за рисуването
     Vector3 Position;
-    int ComfortLevel = 0; // <--- Трябва само за изкуствения интелект
+    Model3D ChairModel; // <--- Трябва само за рисуването
+    int ComfortLevel; // <--- Трябва само за изкуствения интелект
     PhysicsModel PhModel; // <--- Трябва само за физичната симулация
 };
-class ArmChair : public Chair;
-class SwivelChair : public Chair;
+class ArmChair : public Chair { ... }
+class SwivelChair : public Chair { ... }
 ...
 vector<Chair> chairs;
 Draw(chairs);
@@ -363,14 +361,13 @@ ConsiderChairsForAI(chairs);
 --- VERTICAL SLIDE ---
 
 ```cpp
-class ChairForPhysics
+class Chair { ... }
+class ChairForPhysics : public Chair
 {
-    int Id;
     PhysicsModel PhModel;
 };
-class ChairForAI
+class ChairForAI : public Chair
 {
-    int Id;
     int ComfortLevel;
 };
 ...
