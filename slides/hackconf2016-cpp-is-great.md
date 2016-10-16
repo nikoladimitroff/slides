@@ -223,19 +223,19 @@ http://www.joelonsoftware.com/items/2003/10/13.html
 ### Кодове за грешки
 
 ```cpp
-bool MySqrt(double num, double& result)
+enum class ErrorCode {NoError, InvalidArgument};
+ErrorCode MySqrt(double num, double& result)
 {
     if (num < 0)
-        return false;
+        return ErrorCode::InvalidArgument;
     result = sqrt(num);
-    return true;
+    return ErrorCode::NoError;
 }
-
 void DoSomeMath()
 {
     double result = 0;
-    bool didSucceed = MySqrt(-5, result);
-    if (!didSucceed)
+    ErrorCode code = MySqrt(-5, result);
+    if (code != ErrorCode::NoError)
         cout << "Sqrt failed! " << endl;
 }
 ```
