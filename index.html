@@ -23,6 +23,24 @@
            .reveal a {
                font-family: Segoe UI;
            }
+
+           /* Style the info panel */
+           .info-panel {
+               font-family: Calibri;
+               position: absolute;
+               color: white;
+               font-size: 1.5em;
+               position: absolute;
+               left: 50%;
+               top: 25%;
+               transform: translate(-50%);
+           }
+           .info-panel dt {
+               font-size: 1.5em;
+           }
+           .info-panel a {
+               color: slategrey;
+           }
         </style>
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -60,9 +78,67 @@
         <script src="revealjs/js/reveal.js"></script>
         <script>
             (function () {
+                var queryStringArgs = (function(a) {
+                    if (a == "") return {};
+                    var b = {};
+                    for (var i = 0; i < a.length; ++i)
+                    {
+                        var p=a[i].split('=', 2);
+                        if (p.length == 1)
+                            b[p[0]] = "";
+                        else
+                            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+                    }
+                    return b;
+                })(window.location.search.substr(1).split('&'));
 
+                if (!queryStringArgs["lecture"]) {
+                    // No lecture chosen; show a list of all lectures
+                    var revealContainer = document.body.querySelector(".reveal-container");
+                    document.body.removeChild(revealContainer);
+
+                    var lectures = [{
+                            // Note: file shouldn't contain extension
+                            file: "the-game-industry-at-home",
+                            name: "The state of the game industry in Bulgaria",
+                            description: "Describes some of the companies working in the game-dev industry in Bulgaria as of 2016. Image-only. Talk at BGA 2016."
+                        }, {
+                            file: "hackconf2016-cpp-is-great",
+                            name: "Как програмирането от ниско ниво ни прави по-добри програмисти на високо",
+                            description: "Разказ за техниките, които се пораждат в C++ поради нуждата да е бърз и тяхното приложение на други места. HackConf2016."
+                        }
+                    ]
+                    var infoPanel = document.createElement("div");
+                    infoPanel.classList.add("info-panel");
+                    var heading = document.createElement("h1");
+                    heading.textContent = "This is a list of slides for some talks I've given. Some of them are in Bulgarian only."
+                    infoPanel.appendChild(heading);
+                    var slidesList = document.createElement("dl");
+                    for (var i = 0; i < lectures.length; i++) {
+                        var anchor = document.createElement("a");
+                        anchor.href="index.html?lecture=" + lectures[i].file;
+                        anchor.textContent = lectures[i].name;
+                        var dt = document.createElement("dt");
+                        dt.appendChild(anchor);
+                        var dd = document.createElement("dd");
+                        dd.textContent = lectures[i].description;
+                        slidesList.appendChild(dt);
+                        slidesList.appendChild(dd);
+                    }
+                    infoPanel.appendChild(slidesList);
+                    document.body.appendChild(infoPanel);
+                    return;
+                }
+
+                // Lecture chosen - initialize reveal.js
                 var revealSection = document.querySelector(".reveal .slides section");
-                revealSection.dataset.markdown = "slides/hackconf2016-cpp-is-great.md";
+                revealSection.dataset.markdown = "slides/" + queryStringArgs["lecture"] + ".md";
+                // Attempt to add any css for this particular presentation
+                var link  = document.createElement("link");
+                link.rel  = "stylesheet";
+                link.type = "text/css";
+                link.href = "slides/resources/" + queryStringArgs["lecture"] + "/" + "extra.css";
+                document.head.appendChild(link);
                 // Full list of configuration options available at:
                 // https://github.com/hakimel/reveal.js#configuration
                 Reveal.initialize({
