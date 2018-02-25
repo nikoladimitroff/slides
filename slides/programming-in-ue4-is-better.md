@@ -47,27 +47,59 @@ You want to make games, not tools to fix your existing tools.
 
 * Entity-component management
 * Programming language choice
-* Source code availalibity
 * Extensibility & customiziability
-* Code Consistency
 
 --- VERTICAL SLIDE ---
 
-Entity-component management
+## Entity-component management
+
+World -> entities -> components
+
+* The LY bus way
+* The U3D singleton problem
+* The UE4 middle-ground
+
+Note:
+- In LY everything's a message / event
+- In U3D components only work on the current entity. No good way to
+sync multiple components; Everything's mashed in together
 
 --- VERTICAL SLIDE ---
 
-Programming language choice
+## Programming language choice
+
+- For programmers?
+- For designers?
+- IDE & tools?
+
+Note:
+
+MonoDevelop? C'mon?
+Yes, I know Playmaker exists.
 
 --- VERTICAL SLIDE ---
 
-Extensibility & customiziability
+## Extensibility & customizability
 
---- VERTICAL SLIDE ---
+Engines aren't set in stone; they are molded to fit the game
 
-Code Consistency
+<!-- .element class="fragment" data-fragment-index="0" --> ![Can I haz source code](slides/resources/programming-in-ue4-is-better/can_i_haz_some_source_code.jpg)
 
+Note:
 
+- Engines can't excel at everything so they must be extendable
+- True extensibility imposible without source code
+- I've seen people completely change the look of their UE4 editor
+- Lumberyard:
+  - can't post custom rendering tasks
+- CryEngine:
+  - extending the editor is done by writing MFC in THEIR files
+- Unity3D:
+  - can't run OpenGL on Windows in the editor
+Code Consistency is just as important
+UE4's modules Vs. Unity's plugins
+- Can I enable / disable stuff?
+- Can I unload modules on the fly?
 
 --- NEXT SLIDE ---
 
