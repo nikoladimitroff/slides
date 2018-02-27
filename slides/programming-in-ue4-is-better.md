@@ -49,15 +49,15 @@ You want to make games, not tools to fix your existing tools.
 * Programming language choice
 * Extensibility & customiziability
 
---- VERTICAL SLIDE ---
+--- NEXT SLIDE ---
 
 ## Entity-component management
 
 World -> entities -> components
 
-* The LY bus way
-* The U3D singleton problem
-* The UE4 middle-ground
+But, how do you:
+* Synchronize components and entities
+* Add code to your entire level, not just some entity
 
 Note:
 - In LY everything's a message / event
@@ -65,6 +65,48 @@ Note:
 sync multiple components; Everything's mashed in together
 
 --- VERTICAL SLIDE ---
+
+### LY's approach
+
+Beevers on busses & slices
+
+![LY Slices](slides/resources/programming-in-ue4-is-better/ly-slices-anatomy.png)
+
+--- VERTICAL SLIDE ---
+
+### Unity's approach
+
+```c#
+void Start()
+{
+    // How slow is GetComponent?
+    HingeJoint hinge = gameObject.GetComponent("HingeJoint") as HingeJoint;
+
+    // Why would this be null? When is HingeJoint initialized?
+    // Do I have control over initialization / tick ordering?
+    // Hint: I do, but only on the global level, and only from a hidden editor window
+    if (hinge != null)
+        hinge.useSpring = false;
+}
+```
+
+Note:
+Singletons all the way!
+
+--- VERTICAL SLIDE ---
+
+### UE4's approach
+
+```c#
+UCLASS()
+class AMyActor : public AActor
+{
+    UPROPERTY()
+    UMyComponent* Component;
+}
+```
+
+--- NEXT SLIDE ---
 
 ## Programming language choice
 
@@ -74,10 +116,13 @@ sync multiple components; Everything's mashed in together
 
 Note:
 
+Java / Minecraft
+TS / Chobolabs
+Hard things should be hard!
 MonoDevelop? C'mon?
 Yes, I know Playmaker exists.
 
---- VERTICAL SLIDE ---
+--- NEXT SLIDE ---
 
 ## Extensibility & customizability
 
@@ -95,11 +140,15 @@ Note:
 - CryEngine:
   - extending the editor is done by writing MFC in THEIR files
 - Unity3D:
-  - can't run OpenGL on Windows in the editor
+  - can't run OpenGL on Windows
 Code Consistency is just as important
 UE4's modules Vs. Unity's plugins
-- Can I enable / disable stuff?
-- Can I unload modules on the fly?
+- Feature time comparison
+- Bug fixes!
+
+--- VERTICAL SLIDE ---
+
+![Bug fixes with open code](slides/resources/programming-in-ue4-is-better/ue412_release_notes.png)
 
 --- NEXT SLIDE ---
 
