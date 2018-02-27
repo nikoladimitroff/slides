@@ -68,9 +68,9 @@ sync multiple components; Everything's mashed in together
 
 ### LY's approach
 
-Beevers on busses & slices
+Beavers on busses & slices
 
-![LY Slices](slides/resources/programming-in-ue4-is-better/ly-slices-anatomy.png)
+![Beaver bus](slides/resources/programming-in-ue4-is-better/beaver_bus.jpg)
 
 --- VERTICAL SLIDE ---
 
@@ -116,8 +116,9 @@ class AMyActor : public AActor
 
 Note:
 
-Java / Minecraft
-TS / Chobolabs
+- If you have doubts about perf:
+  - Java / Minecraft
+  - TS / Chobolabs
 Hard things should be hard!
 MonoDevelop? C'mon?
 Yes, I know Playmaker exists.
@@ -135,16 +136,13 @@ Note:
 - Engines can't excel at everything so they must be extendable
 - True extensibility imposible without source code
 - I've seen people completely change the look of their UE4 editor
-- Lumberyard:
-  - can't post custom rendering tasks
-- CryEngine:
-  - extending the editor is done by writing MFC in THEIR files
-- Unity3D:
-  - can't run OpenGL on Windows
-Code Consistency is just as important
-UE4's modules Vs. Unity's plugins
+- Lumberyard: can't post custom rendering tasks
+- CryEngine: extending the editor is done by writing MFC in THEIR files
+- Unity3D: can't run OpenGL on Windows
+- UE4's modules Vs. Unity's plugins
 - Feature time comparison
 - Bug fixes!
+- The culling fix, 6 hours
 
 --- VERTICAL SLIDE ---
 
