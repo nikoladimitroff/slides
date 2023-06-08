@@ -98,6 +98,7 @@
                     document.body.removeChild(revealContainer);
 
                     var lectures = [ {
+                            // Note: file name shouldn't contain extension
                             file: "programming-in-ue4-is-better",
                             name: "Why programming in Unreal Engine 4 is better than...",
                             description: "A comparison between the technology and programmer workflow in UE4 and similar engines. Sofia Game Dev Meetup, February 2018."
@@ -106,10 +107,13 @@
                             name: "Как програмирането от ниско ниво ни прави по-добри програмисти на високо",
                             description: "Разказ за техниките, които се пораждат в C++ поради нуждата да е бърз и тяхното приложение на други места. HackConf2016."
                         },{
-                            // Note: file shouldn't contain extension
                             file: "the-game-industry-at-home",
                             name: "The state of the game industry in Bulgaria",
                             description: "Describes some of the companies working in the game-dev industry in Bulgaria as of 2016. Image-only. Talk at BGA 2016."
+                        },{
+                            file: "introduction-to-unreal",
+                            name: "Въведение в Unreal Engine",
+                            description: "Разходката в предверието на Unreal Engine, причините за неговото съществуване и разработката на игри като кариера. Семинар в SoftUni, 2023."
                         },
                     ]
                     var infoPanel = document.createElement("div");
