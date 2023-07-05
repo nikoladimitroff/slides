@@ -1,0 +1,50 @@
+<html>
+<body>
+<textarea id="input"></textarea>
+<input id="key1" type="number" min="-30" max="30" step="1" />
+<input id="key2" type="number" min="-30" max="30" step="1" />
+<input id="key3" type="number" min="-30" max="30" step="1" />
+<p id="output"></p>
+<script>
+let input = document.getElementById("input");
+let key1 = document.getElementById("key1");
+let key2 = document.getElementById("key2");
+let key3 = document.getElementById("key3");
+let output = document.getElementById("output")
+
+let alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩъЬЮЯ";
+let cyrillicStart = 'А';
+let cyrillicStartCode = cyrillicStart.charCodeAt(0);
+let cyrillicEnd = 'Я';
+let cyrillicEndCode = cyrillicEnd.charCodeAt(0);
+
+let processLetter = (c, ks) => {
+	let isLower = c.toLowerCase() == c;
+	let upperC = c.toUpperCase();
+	let charCode = upperC.charCodeAt(0);
+	let alphabetIndex = alphabet.indexOf(upperC);
+	if (alphabetIndex != -1) {
+		let randomKeyIndex = ~~(Math.random() * ks.length);
+		let randomKey = ks[randomKeyIndex] + 1; // we start from 1
+		return alphabetIndex + (randomKeyIndex * 30) + randomKey + " ";
+	}
+	return c;
+};
+
+let process = (s, ks) => {
+	let newS = "";
+	for (let i = 0; i < s.length; i++) {
+		newS += processLetter(s.charAt(i), ks);
+	}
+	return newS;
+};
+
+let update = () => {
+	output.textContent = process(input.value, [~~key1.value, ~~key2.value, ~~key3.value]);
+};
+
+input.addEventListener("input", update);
+key.addEventListener("change", update);
+</script>
+</body>
+</html>

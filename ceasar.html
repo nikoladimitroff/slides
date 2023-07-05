@@ -1,0 +1,48 @@
+<html>
+<body>
+<label>Текст</label>
+<textarea id="input"></textarea>
+<label>Ключ</label>
+<input id="key" type="number" min="-30" max="30" step="1" />
+<br/>
+<label>Резултат</label>
+<p id="output"></p>
+<script>
+let input = document.getElementById("input");
+let key = document.getElementById("key");
+let output = document.getElementById("output")
+
+let alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЬЮЯ";
+
+let processLetter = (c, k) => {
+	let isLower = c.toLowerCase() == c;
+	let upperC = c.toUpperCase();
+	let charCode = upperC.charCodeAt(0);
+	let alphabetIndex = alphabet.indexOf(upperC);
+	if (alphabetIndex != -1) {
+		let transformed = alphabet.charAt((alphabet.length + alphabetIndex + k) % alphabet.length);
+		if (isLower) {
+			return transformed.toLowerCase();
+		}
+		return transformed;
+	}
+	return c;
+};
+
+let process = (s, k) => {
+	let newS = "";
+	for (let i = 0; i < s.length; i++) {
+		newS += processLetter(s.charAt(i), k);
+	}
+	return newS;
+};
+
+let update = () => {
+	output.textContent = process(input.value, ~~key.value);
+};
+
+input.addEventListener("input", update);
+key.addEventListener("change", update);
+</script>
+</body>
+</html>
